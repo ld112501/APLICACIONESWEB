@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="eS">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="../styles/monokai_sublime.css">
+	<script type="text/javascript" src="../js/highlight.pack.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+	<script>
+		hljs.configure({tabReplace: '    '});
+		hljs.initHighlightingOnLoad();
+	</script>
+	<style> 
+.container * {1px red solid;}
+div {
+  counter-reset: numero_r;
+}
+div p:before {
+  content: "Renglon " counter(numero_r) ": ";
+  counter-increment: numero_r;
+}
+
+</style>
+</head>
+<body>
+<div class "container" style="float:left; width:50%;">
+	<div>
+	  <p>Linea 1 del texto</p>
+	  <p>Linea 2 del texto</p>
+	  <p>Linea 3 del texto</p>
+	<div><br>
+	  <p>Linea 1 del texto</p>
+	  <p>Linea 2 del texto</p>
+	  <p>Linea 3 del texto</p>
+	<div><br>
+      <p>Linea 1 del texto</p>
+	  <p>Linea 2 del texto</p>
+	  <p>Linea 3 del texto</p>
+    </div>
+  </div>
+</div>
+
+
+
+</ul>
+		
+	</div>
+	
+
+	<div style="float:left; width:50%;">
+		<pre><code>
+&lt;!doctype html&gt;
+&lt;html lang="eS"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;&lt;/title&gt;
+	&lt;link rel="stylesheet" href="../styles/monokai_sublime.css"&gt;
+	&lt;script type="text/javascript" src="../js/highlight.pack.js"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="../js/jquery-1.11.0.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+		hljs.configure({tabReplace: '    '});
+		hljs.initHighlightingOnLoad();
+	&lt;/script&gt;
+	&lt;style&gt; 
+.container * {1px red solid;}
+div {
+  counter-reset: numero_r;
+}
+div p:before {
+  content: "Renglon " counter(numero_r) ": ";
+  counter-increment: numero_r;
+}
+&lt;style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class "container" style="float:left; width:50%;"&gt;
+	&lt;div&gt;
+	  &lt;p&gt;Linea 1 del texto&lt;/p&gt;
+	  &lt;p&gt;Linea 2 del texto&lt;/p&gt;
+	  &lt;p&gt;Linea 3 del texto&lt;/p&gt;
+	&lt;div&gt;&lt;br&gt;
+	  &lt;p&gt;Linea 1 del texto&lt;/p&gt;
+	  &lt;p&gt;Linea 2 del texto&lt;/p&gt;
+	  &lt;p&gt;Linea 3 del texto&lt;/p&gt;
+	&lt;div&gt;&lt;br&gt;
+      &lt;p&gt;Linea 1 del texto&lt;/p&gt;
+	  &lt;p&gt;Linea 2 del texto&lt;/p&gt;
+	  &lt;p&gt;Linea 3 del texto&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+		</pre></code>
+	</div>	
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<html>
+<head>
+<script>
+function ChangeOrphans()
+{
+document.getElementById("p1").style.orphans=document.getElementById("orphans").value;
+}
+</script>
+<style>
+.othercontent
+{
+width:400px;
+border-top:19cm solid #c3c3c3;
+}
+
+@page
+{
+/* set size of printed page */
+size:21cm 27cm;
+margin-top:2cm;
+}
+
+@media print
+{
+.orphans
+{
+orphans:2;
+}
+}
+</style>
+</head>
+
+<body>
+<div class="othercontent">
+<input id="orphans" value="2">
+<button onclick="ChangeOrphans();">Change orphans</button>
+
+<p style="font-size:120%" id="p1">
+Change orphans and see the print preview.<br>
+Line 2<br>
+Line 3<br>
+Line 4<br>
+Line 5<br>
+Line 6<br>
+Line 7<br>
+Line 8<br>
+</p>
+
+<div style="float:left; width:50%;">
+
+		<pre><code>
+
+
+
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function ChangeOrphans()
+{
+document.getElementById("p1").style.orphans=document.getElementById("orphans").value;
+}
+&lt;/script&gt;
+&lt;style&gt;
+.othercontent
+{
+width:400px;
+border-top:19cm solid #c3c3c3;
+}
+
+@page
+{
+/* set size of printed page */
+size:21cm 27cm;
+margin-top:2cm;
+}
+
+@media print
+{
+.orphans
+{
+orphans:2;
+}
+}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div class="othercontent"&gt;
+&lt;input id="orphans" value="2"&gt;
+&lt;button onclick="ChangeOrphans();"&gt;Change orphans&lt;/button&gt;
+
+&lt;p style="font-size:120%" id="p1"&gt;
+Change orphans and see the print preview.&lt;br&gt;
+Line 2&lt;br&gt;
+Line 3&lt;br&gt;
+Line 4&lt;br&gt;
+Line 5&lt;br&gt;
+Line 6&lt;br&gt;
+Line 7&lt;br&gt;
+Line 8&lt;br&gt;
+&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+
+		</pre></code>
+	</div>	
+
+
+
+</body>
+</html>
