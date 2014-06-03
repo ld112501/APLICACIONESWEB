@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:curso xmlns:tns="http://www.example.org/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/XMLSchema XMLSchema.xsd ">
+  <tns:semestre>tns:semestre</tns:semestre>
+  <tns:docente>
+    <tns:codigo>tns:codigo</tns:codigo>
+    <tns:nombre>tns:nombre</tns:nombre>
+    <tns:apellido>tns:apellido</tns:apellido>
+    <tns:cedula>tns:cedula</tns:cedula>
+  </tns:docente>
+  <tns:materia>
+    <tns:codigo>tns:codigo</tns:codigo>
+    <tns:nombre>tns:nombre</tns:nombre>
+    <tns:descripcion>tns:descripcion</tns:descripcion>
+    <tns:creditos>tns:creditos</tns:creditos>
+  </tns:materia>
+  <tns:estudiante>
+    <tns:codigo>tns:codigo</tns:codigo>
+    <tns:nombre>tns:nombre</tns:nombre>
+    <tns:apellido>tns:apellido</tns:apellido>
+    <tns:cedula>tns:cedula</tns:cedula>
+  </tns:estudiante>
+</tns:curso>
