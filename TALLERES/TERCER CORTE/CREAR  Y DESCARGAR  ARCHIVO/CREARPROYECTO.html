@@ -1,0 +1,471 @@
+<!doctype html>
+
+<html>
+  
+  <head>
+    <title>Justified Nav</title>
+    <meta name="viewport" content="width=device-width">
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <style type="text/css">
+       body
+        {
+            padding-top: 20px;
+        }
+        .footer
+        {
+            border-top: 1px solid #eee;
+            margin-top: 40px;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        /* Main marketing message and sign up button */.jumbotron
+        {
+            text-align: center;
+            background-color: transparent;
+        }
+        .jumbotron .btn
+        {
+            font-size: 21px;
+            padding: 14px 24px;
+        }
+        /* Customize the nav-justified links to be fill the entire space of the .navbar */.nav-justified
+        {
+            background-color: #eee;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .nav-justified > li > a
+        {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            color: #777;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid #d5d5d5;
+            background-color: #e5e5e5; /* Old browsers */
+            background-repeat: repeat-x; /* Repeat the gradient */
+            background-image: -moz-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%); /* FF3.6+ */
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #e5e5e5)); /* Chrome,Safari4+ */
+            background-image: -webkit-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%); /* Chrome 10+,Safari 5.1+ */
+            background-image: -ms-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%); /* IE10+ */
+            background-image: -o-linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%); /* Opera 11.10+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#e5e5e5', GradientType=0); /* IE6-9 */
+            background-image: linear-gradient(top, #f5f5f5 0%, #e5e5e5 100%); /* W3C */
+        }
+        .nav-justified > .active > a, .nav-justified > .active > a:hover, .nav-justified > .active > a:focus
+        {
+            background-color: #ddd;
+            background-image: none;
+            box-shadow: inset 0 3px 7px rgba(0, 0, 0, .15);
+        }
+        .nav-justified > li:first-child > a
+        {
+            border-radius: 5px 5px 0 0;
+        }
+        .nav-justified > li:last-child > a
+        {
+            border-bottom: 0;
+            border-radius: 0 0 5px 5px;
+        }
+        @media (min-width: 768px)
+        {
+            .nav-justified
+            {
+                max-height: 52px;
+            }
+            .nav-justified > li > a
+            {
+                border-left: 1px solid #fff;
+                border-right: 1px solid #d5d5d5;
+            }
+            .nav-justified > li:first-child > a
+            {
+                border-left: 0;
+                border-radius: 5px 0 0 5px;
+            }
+            .nav-justified > li:last-child > a
+            {
+                border-radius: 0 5px 5px 0;
+                border-right: 0;
+            }
+        }
+        /* Responsive: Portrait tablets and up */@media screen and(min-width: 768px)
+        {
+            /* Remove the padding we set earlier */    .masthead, .marketing, .footer
+            {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+        .form-signin
+        {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+        .form-signin .form-signin-heading, .form-signin .checkbox
+        {
+            margin-bottom: 10px;
+        }
+        .form-signin .checkbox
+        {
+            font-weight: normal;
+        }
+        .form-signin .form-control
+        {
+            position: relative;
+            font-size: 16px;
+            height: auto;
+            padding: 10px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+        .form-signin .form-control:focus
+        {
+            z-index: 2;
+        }
+        .form-signin input[type="text"]
+        {
+            margin-bottom: -1px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .form-signin input[type="password"]
+        {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+		.margen{
+			margin-top: 10px;
+		}
+    </style>
+	
+	<script type="text/javascript">
+
+
+	function descargarArchivo(contenidoEnBlob, nombreArchivo) {
+       //creamos un FileReader para leer el Blob
+  var reader = new FileReader();
+  //Definimos la función que manejará el archivo
+  //una vez haya terminado de leerlo
+  reader.onload = function (event) {
+    //Usaremos un link para iniciar la descarga 
+    var save = document.createElement('a');
+    save.href = event.target.result;
+    save.target = '_blank';
+    //Truco: así le damos el nombre al archivo 
+    save.download = nombreArchivo || 'archivo.dat';
+    var clicEvent = new MouseEvent('click', {
+      'view': window,
+      'bubbles': true,
+      'cancelable': true
+    });
+    //Simulamos un clic del usuario
+    //no es necesario agregar el link al DOM.
+    save.dispatchEvent(clicEvent);
+    //Y liberamos recursos...
+    (window.URL || window.webkitURL).revokeObjectURL(save.href);
+  };
+  //Leemos el blob y esperamos a que dispare el evento "load"
+  reader.readAsDataURL(contenidoEnBlob);
+};
+
+
+
+      function obtenerDatos() {
+         return {
+     semestre: document.getElementById('textsemestre').value,
+	 tiempo: document.getElementById('texttiempo').value,
+	 unidad: document.getElementById('textunidad').value,
+	 materia: document.getElementById('textmateria').value,
+	 tproyecto: document.getElementById('textproyecto').value,
+	 prerrequisitos: document.getElementById('textprerrequisitos').value,
+	 datosproy: document.getElementById('textdatosproy').value,
+	 objetivos: document.getElementById('textobjetivos').value,
+	 enunciado: document.getElementById('textenunciado').value,
+	 preguntas: document.getElementById('textpreguntas').value,
+	recursos: document.getElementById('textrecursos').value,
+  	
+  };
+};
+
+
+
+      function escaparXML(cadena) {
+        if (typeof cadena !== 'string') {
+    return '';
+  };
+  cadena = cadena.replace('&', '&amp;')
+                 .replace('<', '&lt;')
+                 .replace('>', '&gt;')
+                 .replace('"', '&quot;');
+  return cadena;
+};
+
+
+      function generarTexto(datos) {
+       var texto = [];
+	   
+	    
+  texto.push('Proyectos FUSM:\n');
+  texto.push('Semestre: ');
+  texto.push(datos.semestre);
+  texto.push('\n');
+  
+  texto.push('Tiempo: ');
+  texto.push(datos.tiempo);
+  texto.push('\n');
+  
+  texto.push('Unidad Tematica: ');
+  texto.push(datos.unidad);
+  texto.push('\n');
+  
+  texto.push('Materia: ');
+  texto.push(datos.materia);
+  texto.push('\n');
+  
+  texto.push('Titulo del Proyecto: ');
+  texto.push(datos.tproyecto);
+  texto.push('\n');
+  
+  texto.push('Prerrequisitos: ');
+  texto.push(datos.prerrequisitos);
+  texto.push('\n');
+
+  texto.push('Datos proyecto: ');
+  texto.push(datos.datosproy);
+  texto.push('\n');
+  
+   texto.push('Objetivos: ');
+  texto.push(datos.objetivos);
+  texto.push('\n');
+  
+   texto.push('Enunciado: ');
+  texto.push(datos.enunciado);
+  texto.push('\n');
+  
+   texto.push('Preguntas: ');
+  texto.push(datos.preguntas);
+  texto.push('\n');
+  
+   texto.push('Recursos: ');
+  texto.push(datos.recursos);
+  texto.push('\n');
+  
+   
+  //El constructor de Blob requiere un Array en el primer 
+  //parámetro así que no es necesario usar toString. El 
+  //segundo parámetro es el tipo MIME del archivo
+  return new Blob(texto, {
+    type: 'text/plain'
+  });
+};
+
+      function generarXml(datos) {
+        var texto = [];
+  texto.push('<?xml version="1.0" encoding="UTF-8" ?>\n');
+  texto.push('<datos>\n');
+  
+  
+  texto.push('\t<semestre>');
+  texto.push(escaparXML(datos.semestre));
+  texto.push('</semestre>\n');
+  
+  texto.push('\t<tiempo>');
+  texto.push(escaparXML(datos.tiempo));
+  texto.push('</tiempo>\n');
+  
+  texto.push('\t<unidad>');
+  texto.push(escaparXML(datos.unidad);
+  texto.push('</unidad>\n');
+  
+  texto.push('\t<materia>');
+  texto.push(escaparXML(datos.materia));
+  texto.push('</materia>\n');
+  
+  texto.push('\t<tproyecto>');
+  texto.push(escaparXML(datos.tproyecto));
+  texto.push('</tproyecto>\n');
+  
+  texto.push('\t<prerequisitos>');
+  texto.push(escaparXML(datos.prerrequisitos));
+  texto.push('</prerequisitos>\n');
+  
+  texto.push('\t<datosproy>');
+  texto.push(escaparXML(datos.datosproy));
+  texto.push('</datosproy>\n');
+  
+  texto.push('\t<objetivos>');
+  texto.push(escaparXML(datos.objetivos));
+  texto.push('</objetivos>\n');
+  
+  texto.push('\t<enunciado>');
+  texto.push(escaparXML(datos.enunciado));
+  texto.push('</enunciado>\n');
+  
+  texto.push('\t<preguntas>');
+  texto.push(escaparXML(datos.preguntas));
+  texto.push('</preguntas>\n');
+  
+  texto.push('\t<recursos>');
+  texto.push(escaparXML(datos.recursos));
+  texto.push('</recursos>\n');
+  
+  texto.push('</datos>');
+  //No olvidemos especificar el tipo MIME correcto :)
+  return new Blob(texto, {
+      type: 'application/xml'
+  });
+};
+	  
+	  
+	  
+      window.addEventListener('DOMContentLoaded', function(){
+ 
+        document.getElementById('boton-xml').addEventListener('click', function () {
+          var datos = obtenerDatos();
+          descargarArchivo(generarXml(datos), 'archivo.xml');
+        }, false);
+ 
+        document.getElementById('boton-txt').addEventListener('click', function () {
+          var datos = obtenerDatos();
+          descargarArchivo(generarTexto(datos), 'archivo.txt');
+        }, false);
+ 
+      }, false);
+    </script>
+  </head>
+  
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <h3 class="text-muted">Proyectos FUSM</h3>
+        <ul class="nav nav-justified">
+         <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inicio <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Perfil</a></li>
+                </ul>
+           <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Materia <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="crearMaterias.html">Crear</a></li>
+                  <li><a href="consultarMaterias.html">Consultar</a></li>
+                  <li><a href="asociacionMateriasDocente.html">Asociar a Docente</a></li>
+                </ul>
+		  
+		  <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Proyecto <b class="caret"></b></a>	
+              <ul class="dropdown-menu">
+                  <li><a href="crearProyecto.html">Crear</a></li>
+                  <li><a href="consultarProyectos.html">Consultar</a></li>
+
+                </ul>
+          </li>
+		  
+		  
+		  
+		  
+		  
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Docente <b class="caret"></b></a>	
+              <ul class="dropdown-menu">
+                  <li><a href="crearDocente.html">Crear</a></li>
+                  <li><a href="consultarDocente.html">Consultar</a></li>
+
+                </ul>
+          </li>
+          <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ayuda <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Tutorial</a></li>
+                  <li><a href="#">Acerca de</a></li>
+                </ul>
+        </ul>
+      </div>
+    
+	<div>
+      <label for="textNombre">Nombre:</label>
+      <input type="text" id="textNombre" value="Pedro Pérez <Ing. & Lic.>" /><br/>
+      <label for="textTelefono">Teléfono:</label>
+      <input type="text" id="textTelefono" value="+58.212.555.5555" /><br/>
+    </div><br/>
+    <input type="button" id="boton-txt" value="Descargar TXT" /><br/>
+    <input type="button" id="boton-xml" value="Descargar XML" />
+	
+	
+	 <h3 class="text-center text-muted">
+            Creación de Proyecto</h3>
+        <div class="row">
+			<div class="col-md-1">
+			</div>
+            <div class="col-md-5">
+                <input type="text" id="textsemestre" class="form-control margen"  placeholder="Semestre">
+                 <input type="text"  id="texttiempo" class="form-control margen"  placeholder="Tiempo Presupuestado">
+                  
+				
+            </div>
+            <div class="col-md-5">
+                 <input type="text" id="textunidad" class="form-control margen"  placeholder="Unidad Temática">
+                 <input type="text"  id="textmateria" class="form-control margen"  placeholder="Materia">
+				
+            </div>
+			<div class="col-md-1">
+			</div>
+        </div>
+		 <div class="row">
+			<div class="col-md-1">
+			</div>
+            <div class="col-md-10">
+			 <input type="text"   id="textproyecto" class="form-control margen"  placeholder="Titulo del Proyecto">
+             
+				<textarea type="text"  id="textprerrequisitos" class="form-control margen"  placeholder="Prerrequisitos"></textarea>
+				<textarea type="text"  id="textdatosproy" class="form-control margen"  placeholder="Datos Apoyo Proyecto"></textarea>
+			
+				<textarea type="text" id="textobjetivos" class="form-control margen" placeholder="Objetivos del Proyecto"></textarea>
+				<textarea type="text"  id="textenunciado"  class="form-control margen"  placeholder="Enunciado del Proyecto"></textarea>
+				<textarea type="text" id="textpreguntas" class="form-control margen"  placeholder="Preguntas Guia"></textarea>
+				
+           <textarea type="textDescripcion"  id="textrecursos" class="form-control margen" placeholder="Recursos Bibliograficos"></textarea>
+				
+          				
+				
+            </div>
+			<div class="col-md-1">
+			</div>
+        </div>
+			
+		
+        </br>
+		<center>
+    <input type="button" id="boton-txt" value="Descargar TXT" /><br/>
+    <input type="button" id="boton-xml" value="Descargar XML" />	
+		</center>
+	
+	
+	
+       
+      
+       
+      
+        
+        
+        
+         
+	
+	
+	
+	
+	
+	
+	
+	
+	
+    </div>
+  </body>
